@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aesthe Online Store</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #333;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        .navbar a:hover {
+            color: #f4a261;
+        }
+
+        /* Main Content Styles */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 30%;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        .card-body h3 {
+            font-size: 20px;
+            color: #333;
+        }
+
+        .card-body p {
+            color: #888;
+        }
+
+        .card-footer {
+            padding: 10px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .card-footer .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer a {
+            color: #f4a261;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Clothing Card 1 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Clothing Item 1">
+            <div class="card-body">
+                <h3>Classic T-shirt</h3>
+                <p>Comfortable and stylish cotton t-shirt.</p>
+            </div>
+            <div class="card-footer">
+                <span class="price">$29.99</span>
+            </div>
+        </div>
+        
+        <!-- Clothing Card 2 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Clothing Item 2">
+            <div class="card-body">
+                <h3>Denim Jacket</h3>
+                <p>Trendy and durable denim jacket for all seasons.</p>
+            </div>
+            <div class="card-footer">
+                <span class="price">$59.99</span>
+            </div>
+        </div>
+
+        <!-- Clothing Card 3 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Clothing Item 3">
+            <div class="card-body">
+                <h3>Casual Shoes</h3>
+                <p>Comfortable shoes for daily wear.</p>
+            </div>
+            <div class="card-footer">
+                <span class="price">$49.99</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2025 Aesthe Online Store | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+</body>
+</html>
