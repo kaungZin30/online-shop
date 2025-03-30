@@ -14,7 +14,7 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: rgba(94,48,35, 1);
             color: #333;
         }
 
@@ -23,12 +23,17 @@
             background-color: #333;
             padding: 15px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
         }
 
         .navbar a {
-            color: white;
+            color: rgb(214,204,153);
             text-decoration: none;
             margin: 0 15px;
             font-size: 18px;
@@ -38,11 +43,67 @@
             color: #f4a261;
         }
 
-        /* Main Content */
+        /* Student Info */
+        .student-info {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .student-info span {
+            margin-left: 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgb(214,204,153);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: rgb(68,93,72);
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: rgb(68,93,72);
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            color: rgb(68,93,72);
+        }
+
+        .scroll-down {
+            margin-top: 40px;
+            font-size: 16px;
+            color: #888;
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+
+        /* Product Section */
         .container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: center;
             padding: 20px;
         }
 
@@ -52,7 +113,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             width: 30%;
-            margin-bottom: 20px;
+            margin: 20px;
             transition: transform 0.3s;
         }
 
@@ -67,6 +128,7 @@
 
         .card-body {
             padding: 15px;
+            text-align: center;
         }
 
         .card-body h3 {
@@ -96,8 +158,7 @@
             color: white;
             text-align: center;
             padding: 20px;
-            position: fixed;
-            bottom: 0;
+            position: relative;
             width: 100%;
         }
 
@@ -110,139 +171,72 @@
             text-decoration: underline;
         }
 
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background: white;
-            padding: 20px;
-            width: 80%;
-            max-width: 600px;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .modal-content h2 {
-            margin-bottom: 10px;
-        }
-
-        .modal-content p {
-            text-align: justify;
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
-
-        .close-btn {
-            background: #f4a261;
-            border: none;
-            padding: 10px 15px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .close-btn:hover {
-            background: #e76f51;
-        }
-        .top-corner {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 14px;
-}
-</style>
+    </style>
 </head>
 <body>
 
-    <div class="top-corner">
-        <p>Kaung Zin Thu - 34845525</p>
-    </div>
     <!-- Navbar -->
     <div class="navbar">
-        <a href="#">Home</a>
-        <a href="#">Shop</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+
+        <!-- Student Info (Student ID and Name) -->
+        <div class="student-info">
+            <span class="student-name">Kaung Zin Thu</span> | <span class="student-id">34845525</span>
+        </div>
     </div>
 
-    <!-- Main Content -->
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Aesthé</h1>
+        <h2>Redefining Fashion with Elegance</h2>
+        <p>Welcome to Aesthé, where timeless fashion meets contemporary style. We bring you carefully curated pieces that define elegance and comfort.</p>
+        <p class="scroll-down">↓ Scroll down to explore our collection ↓</p>
+    </div>
+
+    <!-- Product Section -->
     <div class="container">
         <div class="card">
-            <img src="https://via.placeholder.com/300x200" alt="Clothing Item 1">
+            <img src="C:\Users\user\Downloads\Telegram Desktop\Tee3.jpg" alt="Classic T-shirt">
             <div class="card-body">
                 <h3>Classic T-shirt</h3>
                 <p>Comfortable and stylish cotton t-shirt.</p>
             </div>
             <div class="card-footer">
-                <span class="price">$29.99</span>
+                <span class="price">AED 40</span>
             </div>
         </div>
 
         <div class="card">
-            <img src="https://via.placeholder.com/300x200" alt="Clothing Item 2">
+            <img src="C:\Users\user\Downloads\Telegram Desktop\Denim1.jpg" alt="Denim Jacket">
             <div class="card-body">
                 <h3>Denim Jacket</h3>
                 <p>Trendy and durable denim jacket for all seasons.</p>
             </div>
             <div class="card-footer">
-                <span class="price">$59.99</span>
+                <span class="price">AED 75</span>
             </div>
         </div>
 
         <div class="card">
-            <img src="https://via.placeholder.com/300x200" alt="Clothing Item 3">
+            <img src="C:\Users\user\Downloads\Telegram Desktop\sh1.jpg" alt="Casual Shoes">
             <div class="card-body">
                 <h3>Casual Shoes</h3>
                 <p>Comfortable shoes for daily wear.</p>
             </div>
             <div class="card-footer">
-                <span class="price">$49.99</span>
+                <span class="price">AED 60</span>
             </div>
         </div>
     </div>
 
     <!-- Footer -->
     <div class="footer">
-        <p><a href="#" onclick="openModal()">Privacy Policy & Terms of Service</a></p>
+        <p><a href="privacy-terms.html" class="btn">Privacy Policy &amp; Terms of Service</a></p>
     </div>
-
-    <!-- Modal -->
-    <div id="policyModal" class="modal">
-        <div class="modal-content">
-            <h2>Cloud Project Proposal</h2>
-            <p>Aesthé has been engineered from the ground up as an online store to provide a seamless and tailored buying process. The platform operates on Microsoft Azure and Amazon EC2, which, as Infrastructure as a Service (IaaS), leads to maximized scalability, security, and customer performance.</p>
-            <p>By personalizing product suggestions based on user activity, Aesthé has an AI-based recommendation system that raises clients’ interest. The site features a handpicked collection of apparel from reputable labels.</p>
-            
-            <h2>License Rationale</h2>
-            <p>Aesthé will be working under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. This allows every original piece featured on the website, whether written, product descriptions, or images, to remain safe.</p>
-
-            <button class="close-btn" onclick="closeModal()">Back to Main Page</button>
-        </div>
-    </div>
-
-    <script>
-        function openModal() {
-            document.getElementById("policyModal").style.display = "flex";
-        }
-
-        function closeModal() {
-            document.getElementById("policyModal").style.display = "none";
-        }
-    </script>
 
 </body>
 </html>

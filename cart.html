@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Aesthé</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(214,204,153);
+            color: rgb(68,93,72);
+            text-align: center;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 15px 0;
+        }
+        .navbar a {
+            color: rgb(214,204,153);
+            text-decoration: none;
+            padding: 14px 20px;
+            font-size: 18px;
+        }
+        .navbar a:hover {
+            background-color: #ebd06f;
+            color: #333;
+        }
+        .cart-container {
+            padding: 40px;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            background: #222;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px auto;
+            width: 60%;
+            color: #ebd06f;
+        }
+        .remove-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .total {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    
+    <div class="cart-container">
+        <h1>Your Shopping Cart</h1>
+        <div id="cart-items"></div>
+        <p class="total">Total: <span id="total-price">0</span> AED</p>
+    </div>
+
+    <script>
+        function loadCart() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let cartItemsContainer = document.getElementById("cart-items");
+            let totalPrice = 0;
+            cartItemsContainer.innerHTML = "";
+            
+            cart.forEach((item, index) => {
+                let cartItem = document.createElement("div");
+                cartItem.className = "cart-item";
+                cartItem.innerHTML = `
+                    <span>${item.name} - ${item.price} AED</span>
+                    <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+                totalPrice += parseFloat(item.price);
+            });
+            
+            document.getElementById("total-price").textContent = totalPrice.toFixed(2);
+        }
+        
+        function removeItem(index) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            loadCart();
+        }
+        
+        loadCart();
+    </script>
+</body>
+</html>

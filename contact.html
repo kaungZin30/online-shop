@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Aesthé</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgba(214,204,153);
+            color: rgb(68,93,72);
+        }
+
+        .navbar {
+            background-color: #333;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: rgb(214,204,153);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            padding: 10px;
+        }
+
+        .navbar a:hover {
+            color: #f4a261;
+        }
+
+        .navbar a.active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .contact-section {
+            padding: 100px 20px;
+            text-align: center;
+            background-color: rgb(214,204,153);
+        }
+
+        .contact-info {
+            max-width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-info p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: rgb(68,93,72);
+        }
+
+        .contact-info a {
+            color: #f4a261;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: rgb(214,204,153);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+        <h1>Contact Me</h1>
+        <div class="contact-info">
+            <p><strong>Email:</strong> <a href="mailto:petercyrus@example.com">petercyrus@example.com</a></p>
+            <p><strong>Phone:</strong> +1 (234) 567-890</p>
+            <p><strong>Business Hours:</strong> Monday - Friday, 9 AM - 6 PM</p>
+            <p><strong>Location:</strong> Dubai, UAE</p>
+            <p><strong>Follow Me:</strong></p>
+            <p>
+                <a href="#">Instagram</a> | 
+                <a href="#">Facebook</a> | 
+                <a href="#">Twitter</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Aesthé. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
